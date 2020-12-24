@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import AppKit
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -19,24 +20,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         item?.button?.image = NSImage(named: "Cat")
-        
-        let search = NSTextField()
-        search.frame = NSMakeRect(0, 0, 180, 24)
-        search.placeholderString = "Search..."
-        let searchMenu = NSMenuItem()
-        searchMenu.view = search
-        
-        let menu = NSMenu()
-        menu.addItem(searchMenu)
-        menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Item 1", action: #selector(AppDelegate.copyCode), keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Item 2", action: #selector(AppDelegate.copyCode), keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: "Item 3", action: #selector(AppDelegate.copyCode), keyEquivalent: ""))
-        menu.addItem(.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(AppDelegate.quit), keyEquivalent: ""))
-        menu.minimumWidth = 200
-        
-        item?.menu = menu
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -53,3 +36,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+extension NSStatusBarButton {
+
+    public override func mouseDown(with event: NSEvent) {
+        
+        NSApp.activate(ignoringOtherApps: true)
+        
+        self.highlight(true)
+        let menu = SMBMenu(with: self)
+        
+        DispatchQueue.main.async {
+            menu.popUp(positioning: menu.item(at: 0), at:NSMakePoint(self.frame.minX, self.frame.maxY+4), in: self)
+        }
+    }
+}

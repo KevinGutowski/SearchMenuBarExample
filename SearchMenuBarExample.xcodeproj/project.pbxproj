@@ -10,6 +10,7 @@
 		03A8E9602592BB43007C462E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A8E95F2592BB43007C462E /* AppDelegate.swift */; };
 		03A8E9622592BB44007C462E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A8E9612592BB44007C462E /* Assets.xcassets */; };
 		03A8E9652592BB44007C462E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A8E9632592BB44007C462E /* MainMenu.xib */; };
+		03B00A0B25954C5900F65E10 /* SMBMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B00A0A25954C5900F65E10 /* SMBMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		03A8E9642592BB44007C462E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		03A8E9662592BB44007C462E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03A8E9672592BB44007C462E /* SearchMenuBarExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SearchMenuBarExample.entitlements; sourceTree = "<group>"; };
+		03B00A0A25954C5900F65E10 /* SMBMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMBMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				03A8E95F2592BB43007C462E /* AppDelegate.swift */,
+				03B00A0A25954C5900F65E10 /* SMBMenu.swift */,
 				03A8E9612592BB44007C462E /* Assets.xcassets */,
 				03A8E9632592BB44007C462E /* MainMenu.xib */,
 				03A8E9662592BB44007C462E /* Info.plist */,
@@ -130,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03A8E9602592BB43007C462E /* AppDelegate.swift in Sources */,
+				03B00A0B25954C5900F65E10 /* SMBMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
